@@ -1,6 +1,13 @@
-#include <iostream>
+#include "base.h"
+using namespace std;
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    const auto &uniquePtr = std::make_unique<Person>("I.YOON", 44);
+    uniquePtr->ShowPersonInfo();
+    Person *pPerson = uniquePtr.get();
+    pPerson->ShowPersonInfo();
+
     return 0;
 }
